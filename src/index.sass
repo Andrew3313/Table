@@ -1,0 +1,63 @@
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+@font-face 
+  font-family: "Montserrat"
+  src: local("Montserrat"),
+    url: ("./assets/fonts/Montserrat-Regular.ttf") format("truetype")
+  font-weight: 400
+
+@font-face 
+  font-family: "Montserrat"
+  src: local("Montserrat"),
+    url: ("./assets/fonts/Montserrat-Black.ttf") format("truetype")
+  font-weight: 900
+
+* 
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+html 
+  font-size: 62.5%
+  scroll-behavior: smooth
+
+#root 
+  background-color: #1F2B37
+  overflow: hidden
+  height: 100%
+
+body 
+  font-family: "Montserrat", sans-serif
+  font-weight: 400
+  color: white
+
+@media screen and (prefers-reduced-motion: reduce) 
+  html 
+    scroll-behavior: auto
+
+@media (min-width: 1400px)
+    html
+        font-size: 70%
+  
+@media (max-width: 930px) 
+    html
+        font-size: 57% 
+
+@media (max-width: 600px) 
+    html
+        font-size: 50% 
+
+@media (max-width: 500px) 
+    html
+        font-size: 43% 
+
+@media (max-width: 350px) 
+    html
+        font-size: 38% 
+
+  
+
+
+
