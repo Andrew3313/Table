@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://Andrew3313.github.io/table",
+  "homepage": "https://Andrew3313.github.io/Table",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
