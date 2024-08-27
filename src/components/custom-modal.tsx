@@ -1,4 +1,8 @@
 import React from "react";
+import { RootState, useAppDispatch } from "../redux/store";
+import { useSelector } from "react-redux";
+import { setOpenModal, setSelectedUser } from "../redux/usersSlice/users-slice";
+import CloseIcon from "@mui/icons-material/Close";
 import {
   Box,
   Modal,
@@ -7,10 +11,6 @@ import {
   useTheme,
   IconButton,
 } from "@mui/material";
-import { RootState, useAppDispatch } from "../redux/store";
-import { useSelector } from "react-redux";
-import { setOpenModal, setSelectedUser } from "../redux/usersSlice/users-slice";
-import CloseIcon from "@mui/icons-material/Close";
 
 export const CustomModal: React.FC = () => {
   const theme = useTheme();

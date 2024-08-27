@@ -1,12 +1,12 @@
 import React from "react";
-import { IconButton, InputAdornment, TextField } from "@mui/material";
-import ClearIcon from "@mui/icons-material/Clear";
 import { useDebounce } from "react-use";
+import { useSelector } from "react-redux";
 import { setShowAllUsers } from "../redux/usersSlice/users-slice";
 import { fetchSearchUsers } from "../redux/searchUsersSlice/async-actions";
 import { RootState, useAppDispatch } from "../redux/store";
 import { setSearchQuery } from "../redux/searchUsersSlice/search-users-slice";
-import { useSelector } from "react-redux";
+import { IconButton, InputAdornment, TextField } from "@mui/material";
+import ClearIcon from "@mui/icons-material/Clear";
 
 export const СustomInput: React.FC = () => {
   const dispatch = useAppDispatch();

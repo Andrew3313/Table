@@ -2,14 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { RootState, useAppDispatch } from "../redux/store";
 import { IUser, Status } from "../redux/usersSlice/types";
+import { setOpenModal, setSelectedUser } from "../redux/usersSlice/users-slice";
+import { CustomModal } from ".";
+import { columns, myTheme } from "../constants";
 import {
   MaterialReactTable,
   useMaterialReactTable,
 } from "material-react-table";
 import { ThemeProvider } from "@mui/material/styles";
-import { columns, myTheme } from "../constants";
-import { setOpenModal, setSelectedUser } from "../redux/usersSlice/users-slice";
-import { CustomModal } from ".";
 
 export const MyTable: React.FC = () => {
   const dispatch = useAppDispatch();
