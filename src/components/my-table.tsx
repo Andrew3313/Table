@@ -41,8 +41,6 @@ export const MyTable: React.FC = () => {
     }
   }, [showAllUsers, allUsers, allUsersStatus, searchUsers, searchUsersStatus]);
 
-  
-
   const table = useMaterialReactTable({
     columns,
     data,
@@ -123,10 +121,7 @@ export const MyTable: React.FC = () => {
     },
     muiTopToolbarProps: {
       sx: {
-        backgroundColor: "#2B3B48",
-        "& .MuiSvgIcon-root": {
-          color: "white",
-        },
+        display: "none",
       },
     },
     muiBottomToolbarProps: {
