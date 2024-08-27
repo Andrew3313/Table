@@ -10,6 +10,8 @@ export interface IUser {
 
 export interface IUsersSliceState {
   allUsers: IUser[];
+  selectedUser: IUser | null;
+  openModal: boolean;
   showAllUsers: boolean;
   status: Status;
 }
@@ -23,4 +25,3 @@ export enum Status {
 export interface IResponse {
   users: IUser[];
 }
-

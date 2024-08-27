@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../redux/store";
+import { RootState, useAppDispatch } from "../redux/store";
 import { IUser, Status } from "../redux/usersSlice/types";
 import {
   MaterialReactTable,
@@ -8,8 +8,11 @@ import {
 } from "material-react-table";
 import { ThemeProvider } from "@mui/material/styles";
 import { columns, myTheme } from "../constants";
+import { setOpenModal, setSelectedUser } from "../redux/usersSlice/users-slice";
+import { CustomModal } from ".";
 
 export const MyTable: React.FC = () => {
+  const dispatch = useAppDispatch();
   const allUsers = useSelector((state: RootState) => state.usersSlice.allUsers);
   const allUsersStatus = useSelector(
     (state: RootState) => state.usersSlice.status
@@ -136,19 +139,24 @@ export const MyTable: React.FC = () => {
       showRowsPerPage: false,
     },
 
-    // muiTableBodyRowProps: ({ row }) => ({
-    //   onClick: (event) => {
-    //     console.log(event, row.id);
-    //   },
-    //   sx: {
-    //     cursor: "pointer",
-    //   },
-    // }),
+    muiTableBodyRowProps: ({ row }) => ({
+      onClick: () => {
+        dispatch(setSelectedUser(row.original));
+        dispatch(setOpenModal(true));
+      },
+      sx: {
+        cursor: "pointer",
+        "&:hover": {
+          backgroundColor: "#3b4b5c",
+        },
+      },
+    }),
   });
 
   return (
     <ThemeProvider theme={myTheme}>
       <MaterialReactTable table={table} />
+      <CustomModal />
     </ThemeProvider>
   );
 };

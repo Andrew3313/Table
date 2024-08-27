@@ -4,6 +4,8 @@ import { fetchUsers } from "./async-actions";
 
 const initialState: IUsersSliceState = {
   allUsers: [],
+  selectedUser: null,
+  openModal: false,
   showAllUsers: true,
   status: Status.LOADING,
 };
@@ -17,6 +19,12 @@ const usersSlice = createSlice({
     },
     setShowAllUsers(state, action: PayloadAction<boolean>) {
       state.showAllUsers = action.payload;
+    },
+    setSelectedUser(state, action: PayloadAction<IUser | null>) {
+      state.selectedUser = action.payload;
+    },
+    setOpenModal(state, action: PayloadAction<boolean>) {
+      state.openModal = action.payload;
     },
   },
   extraReducers: (builder) => {
@@ -37,5 +45,6 @@ const usersSlice = createSlice({
   },
 });
 
-export const { setAllUsers, setShowAllUsers } = usersSlice.actions;
+export const { setAllUsers, setShowAllUsers, setSelectedUser, setOpenModal } =
+  usersSlice.actions;
 export default usersSlice.reducer;
