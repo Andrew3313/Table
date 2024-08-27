@@ -10,5 +10,5 @@ export default defineConfig({
   preview: {
     port: 8000,
   },
-  base: "/table",
+  base: "/table/",
 });

@@ -15,7 +15,7 @@ import {
 export const CustomModal: React.FC = () => {
   const theme = useTheme();
   const dispatch = useAppDispatch();
-  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
+  const isMobile = useMediaQuery(theme.breakpoints.down(640));
 
   const selectedUser = useSelector(
     (state: RootState) => state.usersSlice.selectedUser
