@@ -41,6 +41,8 @@ export const MyTable: React.FC = () => {
     }
   }, [showAllUsers, allUsers, allUsersStatus, searchUsers, searchUsersStatus]);
 
+  
+
   const table = useMaterialReactTable({
     columns,
     data,
